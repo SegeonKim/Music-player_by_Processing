@@ -64,26 +64,31 @@ void draw()
 {
   make_grid();
   
+  add_list.show();
+  delete_list.show();
+  
   if (is_init) {
       fft.forward(song.mix);
-      equalizer.show();
   
+      list_box.show();
+      fill(#29292a);
+      strokeWeight(2);
+      stroke(#1c1c1c);
+      rect(0, 0, 560, 380);
       if (song.isPlaying()) {
         pause_button.show();
       } else {
         play_button.show();
       }
-    
-      list_box.show();
+
       rewind_button.show();
       forward_button.show();
       play_bar.show();
       volume_bar.show();
+      equalizer.show();
   } else {
     show_default();
   }
-  add_list.show();
-  delete_list.show();
 }
 
 void show_default() {
